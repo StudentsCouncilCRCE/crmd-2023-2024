@@ -30,17 +30,20 @@
         </div>
     </div>
 
-    <?php
-    include 'header.html';
-    ?>
+    <div class="d-flex row">
+        <?php
+        include 'header.html';
+        ?>
 
-    <?php
-    include 'hero.html';
-    ?>
+        <?php
+        include 'hero.html';
+        ?>
 
-    <?php
-    include 'hero.html';
-    ?>
+        <?php
+        include 'about.html';
+        ?>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@beta/bundled/locomotive-scroll.min.js"></script>
     <script>

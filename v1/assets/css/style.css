@@ -4,6 +4,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
 }
 
 .loader-hidden {
@@ -62,70 +63,55 @@ body {
     color: black;
 }
 
-.hero {
-    height: 100vh;
-    width: 100%;
-    position: absolute;
-    z-index: -2;
-    top: 0;
-    object-fit: contain;
-}
 
-.carousel-item {
-    object-fit: contain;
-    height: 100vh;
-    filter: brightness(25%);
-}
-
-.hero-text {
+#vid {
     position: absolute;
     top: 50%;
     left: 50%;
-    font-size: 4rem;
-    font-family: 'Beau Rivage', cursive;
-    transform: translate(-50%, -50%);
-    color: rgb(255, 255, 255);
-    text-align: center;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    overflow: hidden;
 }
 
-.bttn {
-    font-size: 18px;
-    color: #e1e1e1;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    /* font-family: 'Pacifico', cursive; */
-    font-weight: 800;
-    cursor: pointer;
-    position: relative;
+#herotext {
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    font-family: 'Beau Rivage', cursive;
+    font-size: 4rem;
+    color: #ffffff;
+}
+
+.btnn {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
     border: none;
     background: none;
-    text-transform: uppercase;
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: color;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
 
-.bttn:focus,
-.bttn:hover {
-    color: #fff;
+.btnn::before {
+    margin-left: auto;
 }
 
-.bttn:focus:after,
-.bttn:hover:after {
-    width: 100%;
-    left: 0%;
-}
-
-.bttn:after {
-    content: "";
-    pointer-events: none;
-    bottom: -2px;
-    left: 50%;
-    position: absolute;
+.btnn::after,
+.btnn::before {
+    content: '';
     width: 0%;
     height: 2px;
-    background-color: #fff;
-    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-    transition-duration: 400ms;
-    transition-property: width, left;
+    background: #f44336;
+    display: block;
+    transition: 0.5s;
+}
+
+.btnn:hover::after,
+.btnn:hover::before {
+    width: 100%;
 }
