@@ -3,6 +3,16 @@
 --------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
+@font-face {
+  font-family: norwester;
+  src: url(/assets/fonts/norwester.otf);
+}
+
+@font-face {
+  font-family: cabinest;
+  src: url(/assets/fonts/Cabinest.otf);
+}
+
 :root {
   --white: #fff;
   --black: #323135;
@@ -10,13 +20,13 @@
   --columbia-blue: rgb(255, 85, 85);
   --midnight-green: #020202;
   --yellow: #e5f33d;
-  --timeline-gradient: rgb(255, 255, 255) 0%, rgb(255, 255, 255) 50%,
-    rgba(206, 233, 228, 0) 100%;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
+  background-image: url(/assets/img/web-bg.jpg);
+
 }
 
 a {
@@ -38,9 +48,15 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.timeline .title{
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 17px;
+}
 .timeline {
   /* font: normal 16px/1.5 "Inter", sans-serif; */
   /* background: var(--columbia-blue); */
+  height: 60vh;
   color: var(--black);
   margin-bottom: 50px;
 }
@@ -144,6 +160,10 @@ h6 {
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--yellow) var(--midnight-green);
+}
+
+.timeline-text{
+  font-size: 12px !important;
 }
 
 .timeline ol li {
@@ -639,7 +659,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url("../img/hero.png") top center;
   background-size: cover;
   position: relative;
 }
@@ -655,12 +675,22 @@ h6 {
 }
 
 #hero h1 {
-  margin: 0 0 10px 0;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 56px;
+  margin: 0 0 0 0;
+  font-size: 9.5rem;
+  font-weight: 1000 ;
+  line-height: 8.5rem;
   text-transform: uppercase;
+  letter-spacing: 10px;
+  font-family: cabinest;
   color: #fff;
+}
+
+#hero h1 .highlight{
+  background-image: url(/assets/img/bg.jpg);
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 #hero h2 {
@@ -669,6 +699,13 @@ h6 {
   font-size: 24px;
 }
 
+#hero .sex {
+  color: #eee;
+  /* margin-bottom: 30px; */
+  text-align: end;
+  font-size: 2.5rem;
+  font-family: norwester;
+}
 #hero .btn-get-started {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
@@ -687,33 +724,48 @@ h6 {
   border-color: #cc1616;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1224px) {
   #hero {
     background-attachment: fixed;
+  }
+  #hero h1 {
+    font-size: 7rem;
+    line-height: 7rem;
+    text-align: left;
+  }
+
+  #hero .sex {
+    font-size: 2.75rem;
+    line-height: 2.75rem;
   }
 }
 
 @media (max-width: 768px) {
-  #hero {
-    text-align: center;
-  }
-
-  #hero .container {
-    padding-top: 40px;
-  }
 
   #hero h1 {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 6rem;
+    line-height: 6rem;
+    text-align: left;
   }
 
-  #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
-    margin-bottom: 30px;
+  #hero .sex {
+    font-size: 1.75rem;
+    line-height: 1.75rem;
   }
 }
+@media (max-width: 500px) {
+  #hero h1 {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    text-align: left;
+  }
 
+  #hero .sex {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+  }
+  
+}
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -742,7 +794,7 @@ section {
 .section-title span {
   position: absolute;
   top: 30px;
-  color: #f4f4f4;
+  color: #9797976e;
   left: 0;
   right: 0;
   z-index: 1;
@@ -876,9 +928,10 @@ section {
 --------------------------------------------------------------*/
 .services .icon-box {
   text-align: center;
-  padding: 80px 20px;
+  padding: 80px 40px;
   transition: all ease-in-out 0.3s;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .services .icon-box .icon {
@@ -930,7 +983,7 @@ section {
 .services .icon-box:hover {
   background: #cc1616;
   border-color: #cc1616;
-  padding: 70px 20px 90px 20px;
+  padding: 70px 40px 90px 40px;
 }
 
 .services .icon-box:hover .icon {
@@ -950,6 +1003,9 @@ section {
   color: #fff;
 }
 
+.services .icon-box:hover h4 {
+  color: #fff;
+}
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
