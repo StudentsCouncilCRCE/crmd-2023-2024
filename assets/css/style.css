@@ -717,6 +717,9 @@ h6 {
   transition: 0.5s;
   border: 2px solid #fff;
   color: #fff;
+  margin-top: 10px;
+  border-radius: 20px;
+
 }
 
 #hero .btn-get-started:hover {
